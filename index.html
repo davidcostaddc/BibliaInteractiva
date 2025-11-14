@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bíblia Sagrada — Leitura</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="profileModal" class="profile-modal" aria-hidden="true">
+    <div class="profile-modal-content">
+      <span id="closeProfileModal" class="close-modal">&times;</span>
+      <img id="modalAvatar" class="modal-avatar" alt="Avatar">
+      <h2 id="modalName"></h2>
+      <div class="progress-container modal-progress">
+        <div id="modalProgressFill" class="modal-progress-fill"></div>
+      </div>
+      <p id="modalProgressText" class="progress-text"></p>
+    </div>
+  </div>
+
+  <!-- Modal inicial -->
+  <div id="startModal" class="modal active" aria-hidden="false">
+    <div class="modal-card">
+      <h2>Bem-vindo(a)</h2>
+      <p>Digite seu nome e escolha um avatar</p>
+      <input id="userName" type="text" placeholder="Seu nome" />
+      <div class="avatars" id="avatars">
+        <img src="https://i.ibb.co/4RPbtCqr/download-2.jpg" class="avatar-img" alt="Avatar 1">
+        <img src="https://i.ibb.co/WNHkXhRs/unnamed-1.jpg" class="avatar-img" alt="Avatar 2">
+        <img src="https://i.ibb.co/sJV0TQnB/download.jpg" class="avatar-img" alt="Avatar 3">
+        <img src="https://i.ibb.co/TqYKSnwz/download-4.jpg" class="avatar-img" alt="Avatar 4">
+        <img src="https://i.ibb.co/nF6n4Rv/aa.jpg" class="avatar-img" alt="Avatar 5">
+        <img src="https://i.ibb.co/twG9TgzX/Imagem-do-Whats-App-de-2025-11-11-s-11-50-19-3dfaf1a4.jpg" class="avatar-img" alt="Avatar 6">
+      </div>
+      <div class="modal-actions">
+        <button id="startBtn" class="btn primary">Começar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificação de conclusão (lado direito, aparece primeiro) -->
+  <div id="notif-conclusao" class="notif-conclusao" aria-hidden="true">
+    <h3 id="notif-title">Parabéns!</h3>
+    <p id="notif-text">Sua jornada foi abençoada.</p>
+    <button id="notif-abrir" class="notif-btn">Clique aqui</button>
+  </div>
+
+  <!-- Mensagens de conclusão (modal já existente, usado para conteúdo completo) -->
+  <div id="mensagemModal" class="mensagem-modal" aria-hidden="true" style="display:none;">
+    <div class="mensagem-content">
+      <button id="fecharMensagem" class="mensagem-close">✖</button>
+      <div id="mensagemScroll" class="mensagem-scroll"></div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="header-top">
+      <div class="profile" id="profile" aria-hidden="true">
+        <div id="profileAvatar" class="profile-avatar"></div>
+        <div>
+          <div id="profileName" class="profile-name">Visitante</div>
+          <div class="sub-text">Meu progresso</div>
+          <div class="progress-wrapper" title="Progresso de leitura">
+            <div id="progressText">0 / 66</div>
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill" style="width:0%"></div>
+            </div>
+          </div>
+          <div id="jornadaText" class="jornada-text">Jornada Bíblica Total: 0</div>
+        </div>
+      </div>
+      <button id="toggleTheme" class="btn theme-btn">🌙</button>
+    </div>
+
+    <h1 class="titulo-principal">📖 <span>Bíblia</span> Sagrada</h1>
+  </header>
+
+  <main>
+    <section class="testamento">
+      <h2>Antigo Testamento</h2>
+      <div class="prateleira antigo" id="antigo"></div>
+    </section>
+    <div class="divider"></div>
+    <section class="testamento">
+      <h2>Novo Testamento</h2>
+      <div class="prateleira novo" id="novo"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-text">© 2025 David Antonio da Costa | Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
